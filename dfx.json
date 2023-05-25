@@ -1,0 +1,34 @@
+{
+  "canisters": {
+    "sign_enchancer_backend": {
+      "main": "backend/sign_enchancer_backend/main.mo",
+      "type": "motoko"
+    },
+    "acbox_backend": {
+      "main": "backend/acbox_backend/main.mo",
+      "type": "motoko"
+    },
+    "acbox_frontend": {
+      "dependencies": [
+        "acbox_backend",
+        "sign_enchancer_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/acbox_frontend/src/index.html"
+      },
+      "source": [
+        "src/acbox_frontend/assets",
+        "dist/acbox_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
